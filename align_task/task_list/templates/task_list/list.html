@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+</head>
+<body>
+
+    <h1>All Tasks</h1>
+
+    <ul>
+        
+    {% for listingtask in tasks %}
+
+        <li>{{ listingtask.title }}
+            <a href="{% url 'task_list:delete' listingtask.id %}">Delete</a>
+            <a href="{% url 'task_list:update' listingtask.id %}">Update</a>
+        </li>
+    {% endfor %}
+    
+    </ul>
+
+    <a href="{% url 'task_list:create' %}">Create New Task</a>
+
+</body>
+</html>
